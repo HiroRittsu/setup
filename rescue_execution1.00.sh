@@ -29,21 +29,12 @@ brockade=false
 
 CurrentVer=1.00
 
+	if [ ! `curl --connect-timeout 10 https://raw.githubusercontent.com/MiglyA/bash-rescue/master/histry.txt | grep "latest" | awk '{print $2}'` = $CurrentVer ]; then
 
-if [ ! `curl https://raw.githubusercontent.com/MiglyA/bash-rescue/5c9bc63c17ea1fa0a9f699720a94f1ddae342040/histry.txt | grep "latest" | awk '{print $1}'` = $CurrentVer ]; then
-
-	echo "自動アプデートを行います"
-
-fi
-
-
-#アップデート確認
-gnome-terminal --geometry=10x10 -x  bash -c  "
-
+		echo "自動アップデートを行います"
+		wget -N `curl https://raw.githubusercontent.com/MiglyA/bash-rescue/master/histry.txt | grep "url" | awk '{print $2}'`
 	
-	
-"
-
+	fi
 
 	
 #gitフォルダの有無を確認。
@@ -706,6 +697,5 @@ do
 sleep 1
 
 done
-
 
 
