@@ -27,6 +27,7 @@ brockade=false
 #/////////////////////////////////////////////////////////////
 #ここから先は改変しないでくだせぇ動作が止まっても知らないゾ？↓
 
+#自動アップデート
 CurrentVer=1.00
 
 	if [ ! `curl --connect-timeout 10 https://raw.githubusercontent.com/MiglyA/bash-rescue/master/histry.txt | grep "latest" | awk '{print $2}'` = $CurrentVer ]; then
