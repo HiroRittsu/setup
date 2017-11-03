@@ -529,7 +529,7 @@ gnome-terminal --geometry=10x10 -x  bash -c   "
 
 	cd $src
 
-	bash compile.sh>>`pwd`/src.log 2>&1
+	bash compile.sh>>$location/src.log 2>&1
 	
 	bash start.sh -1 -1 -1 -1 -1 -1 localhost | tee -a $location/src.log
 	
@@ -763,5 +763,4 @@ do
 sleep 1
 
 done
-
 
