@@ -7,16 +7,16 @@ git_address="/home/$USER/git"
 #使用するマップを固定したい場合は、例のようにフルパスを指定してください。
 #固定したくない場合は空白で大丈夫です。
  #例) map="/home/migly/git/roborescue-v1.2/maps/gml/Kobe2013/map"
-map=/home/$USER/git/roborescue-v1.2/maps/gml/test
+map= #/home/$USER/git/roborescue-v1.2/maps/gml/test
 
 #使用するソースを固定したい場合は、例のようにフルパスを指定してください。
 #固定したくない場合は空白で大丈夫です。
  #例) src="/home/migly/git/sample"
-src=/home/$USER/git/sample
+src= #/home/$USER/git/sample
 
 #瓦礫の有無。固定する場合はtrue(瓦礫あり)もしくはfalse(瓦礫なし)を指定してください。
 #固定したくない場合は空白で大丈夫です。
-brockade=false
+brockade= #false
 #brockade=true
 
 
