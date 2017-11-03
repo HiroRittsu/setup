@@ -456,6 +456,7 @@ rm server.log &>/dev/null
 rm src.log &>/dev/null
 
 touch src.log
+touch server.log
 
 trap 'last'  {1,2,3,15}
 
@@ -496,26 +497,31 @@ gnome-terminal --geometry=10x10 -x  bash -c  "
 	
 "
 
+
+last(){
+
+  echo
+  echo 
+  echo "シミュレーションを中断します...(´ ･ω･｀)ｼｮﾎﾞﾝ"
+  echo
+  kill `ps aux | grep "bash -c" | awk '{print $2}'` &>/dev/null
+  bash $git_address/roborescue-v1.2/boot/kill.sh &>/dev/null
+  exit 1
+  
+}
+
+#サーバー待機
 while true
 do
 
-	if [ ! `grep -c "Road " server.log` -eq 0 ]; then
+	if [ ! `grep -c "Road " $location/server.log` -eq 0 ]; then
 	
 		break
 	
 	fi
-
-done
-
-
-
-if [ ! -z $road_read ]; then
-
 	
 
-fi
-
-
+done
 
 
 #ソース起動
@@ -530,6 +536,9 @@ gnome-terminal --geometry=10x10 -x  bash -c   "
 	read waitsrc
 	
 "
+
+
+
 
 cd $location
 
@@ -754,6 +763,5 @@ do
 sleep 1
 
 done
-
 
 
