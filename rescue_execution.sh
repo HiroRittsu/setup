@@ -29,11 +29,22 @@ brockade= #false
 
 #自動アップデート
 CurrentVer=1.00
+echo
+echo "Ver.$CurrentVer"
+echo
+echo "バージョンチェックを行います。"
+echo "※ 少し時間がかかる場合があります。"
+echo
 
-	if [ ! `curl --connect-timeout 10 https://raw.githubusercontent.com/MiglyA/bash-rescue/master/histry.txt | grep "latest" | awk '{print $2}'` = $CurrentVer ]; then
+	if [ ! `curl --connect-timeout 3 https://raw.githubusercontent.com/MiglyA/bash-rescue/master/histry.txt | grep "latest" | awk '{print $2}'` = $CurrentVer ]; then &>/dev/null
 
 		echo "自動アップデートを行います"
-		wget -N `curl https://raw.githubusercontent.com/MiglyA/bash-rescue/master/histry.txt | grep "url" | awk '{print $2}'`
+		wget -N -O rescue_execution.sh `curl https://raw.githubusercontent.com/MiglyA/bash-rescue/master/histry.txt | grep "url" | awk '{print $2}'` &>/dev/null
+		echo
+		echo "アップデート完了しました。"
+		echo "再起動をおねがいします。"
+		echo
+		exit 1
 	
 	fi
 
@@ -489,7 +500,7 @@ last(){
   echo "シミュレーションを中断します...(´ ･ω･｀)ｼｮﾎﾞﾝ"
   echo
   kill `ps aux | grep "bash -c" | awk '{print $2}'` &>/dev/null
-  bash $git_address/roborescue-v1.2/boot/kill.sh
+  bash $git_address/roborescue-v1.2/boot/kill.sh &>/dev/null
   exit 1
   
 }
@@ -502,7 +513,7 @@ errerbreak(){
 	echo "シミュレーションを終了します...m(._.*)mﾍﾟｺｯ"
 	echo
 	kill ${prosess[@]} &>/dev/null
-	bash $git_address/roborescue-v1.2/boot/kill.sh
+	bash $git_address/roborescue-v1.2/boot/kill.sh &>/dev/null
 	exit 1
 
 }
@@ -690,7 +701,7 @@ do
 		echo "スコアは"`cat server.log | grep "Score:" | awk '{print $2}'`"でした。"
 		echo
 		kill ${prosess[@]} &>/dev/null
-		bash $git_address/roborescue-v1.2/boot/kill.sh
+		bash $git_address/roborescue-v1.2/boot/kill.sh &>/dev/null
 		exit 1
 		
 	fi
@@ -698,5 +709,6 @@ do
 sleep 1
 
 done
+
 
 
