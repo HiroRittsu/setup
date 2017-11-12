@@ -16,7 +16,7 @@ src= #/home/$USER/git/sample
 
 #瓦礫の有無。固定する場合はtrue(瓦礫あり)もしくはfalse(瓦礫なし)を指定してください。
 #固定したくない場合は空白で大丈夫です。
-brockade= #false
+brockade=
 #brockade=true
 
 
