@@ -642,22 +642,20 @@ do
 			echo
 			cat src.log
 			echo
-  		echo "コンパイルエラー...開始できませんでした...ｻｰｾﾝ( ・ω ・)ゞ"
+  			echo "コンパイルエラー...開始できませんでした...ｻｰｾﾝ( ・ω ・)ゞ"
  			echo "エラー内容はsrc.logでも確認できます。"
  			echo
 
  			killcommand
 
-  		exit 1
+  			exit 1
 
 		fi
 
 		#sucsess
 		if [ `grep -c "Done." src.log` -eq 1 ]; then
 
-			#echo ; echo
 			echo "All Green"
-			#break
 
 		fi
 
@@ -723,7 +721,7 @@ do
 		echo "● シミュレーション終了！！"
 		echo
 		echo "◆ 最終スコアは"`cat server.log | grep "Score:" | awk '{print $2}'`"でした。"
-		echo "時間: "`date +%Y/%m/%d_%H:%M`　"マップ: "`echo $map | sed 's@/map/@@g' | sed 's@/@ @g' |awk '{print $NF}'`　"スコア: "`cat server.log | grep "Score:" | awk '{print $2}'` >> score.log
+		echo `date +%Y/%m/%d_%H:%M`　"マップ: "`echo $map | sed 's@/map/@@g' | sed 's@/@ @g' |awk '{print $NF}'`　"スコア: "`cat server.log | grep "Score:" | awk '{print $2}'` >> score.log
 		echo
 		echo "スコアは'score.log'に記録しました。"
 		echo
