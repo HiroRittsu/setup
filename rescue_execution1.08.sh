@@ -28,7 +28,7 @@ brockade= #false
 #ここから先は改変しないでくだせぇ動作が止まっても知らないゾ？↓
 
 #自動アップデート
-CurrentVer=1.07
+CurrentVer=1.08
 echo
 echo "Ver.$CurrentVer"
 echo
