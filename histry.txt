@@ -1,6 +1,3 @@
 latest 1.09
-latest-Launcher 1.00
 
 url https://raw.githubusercontent.com/MiglyA/bash-rescue/master/rescue_execution1.09.sh
-
-url-Launcher https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher1.00.sh
