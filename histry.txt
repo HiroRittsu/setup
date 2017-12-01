@@ -1,6 +1,6 @@
 ■■■■■rescue_execution-Update■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 latest 1.09
-url https://raw.githubusercontent.com/MiglyA/bash-rescue/master/rescue_execution1.09.sh
+url https://raw.githubusercontent.com/MiglyA/bash-rescue/master/rescue_delete.sh
 
 
 ■■■■■RioneLauncher-Update■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
