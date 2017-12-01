@@ -1,5 +1,5 @@
 ■■■■■rescue_execution-Update■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-latest 1.09
+latest 1.10
 url https://raw.githubusercontent.com/MiglyA/bash-rescue/master/rescue_delete.sh
 
 
