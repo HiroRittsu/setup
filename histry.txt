@@ -1,10 +1,8 @@
 ■■■■■rescue_execution-Update■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 latest 1.09
-
 url https://raw.githubusercontent.com/MiglyA/bash-rescue/master/rescue_execution1.09.sh
 
 
 ■■■■■RioneLauncher-Update■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 RioneLauncher-newVersion 2.00
-
 RioneLauncher-link https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher2.00.sh
