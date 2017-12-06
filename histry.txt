@@ -1,8 +1,3 @@
-■■■■■rescue_execution-Update■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-latest 1.10
-url https://raw.githubusercontent.com/MiglyA/bash-rescue/master/rescue_delete.sh
-
-
-■■■■■RioneLauncher-Update■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-RioneLauncher-newVersion 2.00
-RioneLauncher-link https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher2.00.sh
+■■■■■SoccerLauncher-Update■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+SoccerLauncher-newVersion 1.00
+SoccerLauncher-link https://raw.githubusercontent.com/MiglyA/bash_soccer/master/RioneLauncher2.00.sh
