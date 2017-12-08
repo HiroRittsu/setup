@@ -1,24 +1,6 @@
-#!/bin/bash
-#製作者: みぐりー
-#
-#
-#soccerフォルダの場所
-soccer_address="/home/$USER/soccer"
-#
-#使用するチームをフルパスで指定してください。
-#固定したくない場合は空白で大丈夫です。
- #例) team_1=/home/$USER/soccer/agent2d-3.1.1/src
-team[0]=/home/$USER/soccer/agent2d-3.1.1/src
-team[1]= #/home/$USER/soccer/agent2d-3.1.1/src
-#
-#倍速を有効にするか指定してください。
-#固定したくない場合は空白で大丈夫です。
- #例) synch_mode=false
-synch_mode= #true
 #
 #/////////////////////////////////////////////////////////////
 #ここから先は改変しないでくだせぇ動作が止まっても知らないゾ？↓
-
 #自動アップデート
 CurrentVer=1.00
 echo
