@@ -1,22 +1,21 @@
 #!/bin/bash
 #製作者: みぐりー
-
-
+#
+#
 #soccerフォルダの場所
 soccer_address="/home/$USER/soccer"
-
+#
 #使用するチームをフルパスで指定してください。
 #固定したくない場合は空白で大丈夫です。
  #例) team_1=/home/$USER/soccer/agent2d-3.1.1/src
 team[0]=/home/$USER/soccer/agent2d-3.1.1/src
 team[1]= #/home/$USER/soccer/agent2d-3.1.1/src
-
+#
 #倍速を有効にするか指定してください。
 #固定したくない場合は空白で大丈夫です。
  #例) synch_mode=false
 synch_mode= #true
-
-
+#
 #/////////////////////////////////////////////////////////////
 #ここから先は改変しないでくだせぇ動作が止まっても知らないゾ？↓
 
@@ -33,7 +32,21 @@ echo
 	if [ ! `curl --connect-timeout 3 https://raw.githubusercontent.com/MiglyA/bash_soccer/master/histry.txt | grep "SoccerLauncher-newVersion" | awk '{print $2}'` = $CurrentVer ]; then &>/dev/null
 
 		echo "自動アップデートを行います"
-		wget -N -O RioneLauncher.sh `curl https://raw.githubusercontent.com/MiglyA/bash_soccer/master/histry.txt | grep "SoccerLauncher-link" | awk '{print $2}'` &>/dev/null
+		#wget -N -O RioneLauncher.sh `curl https://raw.githubusercontent.com/MiglyA/bash_soccer/master/histry.txt | grep "SoccerLauncher-link" | awk '{print $2}'` &>/dev/null
+
+		IFS=$'\n'
+
+		t=(`cat $0 | head -$(grep -n '？↓' test1.sh | sed 's/:/ /g' | sed -n 1P | awk '{print $1}')`)
+
+		filename=$0
+
+		rm $filename
+
+		echo "${t[*]}" > $filename
+
+		curl `curl https://raw.githubusercontent.com/MiglyA/bash_soccer/master/histry.txt | grep "SoccerLauncher-link" | awk '{print $2}'` >> $0
+
+
 		echo
 		echo "アップデート完了しました。"
 		echo "再起動をおねがいします。"
