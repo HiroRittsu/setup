@@ -1,6 +1,5 @@
-#
-#/////////////////////////////////////////////////////////////
 #ここから先は改変しないでくだせぇ動作が止まっても知らないゾ？↓
+
 #自動アップデート
 CurrentVer=1.00
 echo
@@ -18,7 +17,7 @@ echo
 
 		IFS=$'\n'
 
-		t=(`cat $0 | head -$(grep -n '？↓' test1.sh | sed 's/:/ /g' | sed -n 1P | awk '{print $1}')`)
+		t=(`cat $0 | head -$(grep -n '？↓' $0 | sed 's/:/ /g' | sed -n 1P | awk '{print $1}')`)
 
 		filename=$0
 
