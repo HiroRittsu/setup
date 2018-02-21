@@ -135,15 +135,8 @@ mkdir $homedir/git
 sudo apt-get install git
 
 #サーバー
-cd $homedir/git
-wget -O install-roborescue.sh https://raw.githubusercontent.com/tkmnet/rcrs-scripts/master/install-roborescue.sh
-sh install-roborescue.sh
-cd
-
-sudo apt install ant
-cd $homedir/git/roborescue-v1.2
-ant
-cd
+echo "サーバーは私のwikiの「レスキューサンプル＆サーバー最新バージョン導入について...」を参考に導入してください。"
+firefox http://rione.org/protected/index.php?Member%2F14%E6%9C%9F%E7%94%9F%2F%E9%87%8E%E5%B4%8E%E5%BC%98%E6%99%83%2F%E9%96%8B%E7%99%BA%E6%97%A5%E8%AA%8C
 
 #ソースコード
 cd $homedir/git
