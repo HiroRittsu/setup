@@ -108,11 +108,8 @@ sudo apt-get install oracle-java8-installer
 echo
 echo "ブラウザから.debをダウンロードしてください。場所は変更しなくても大丈夫です。"
 echo
-firefox https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz
-echo
-echo "完了したら何か入力してください。"
-read wait
 cd $homedir/ダウンロード/
+wget http://ftp.jaist.ac.jp/pub/eclipse/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz
 tar -zxvf eclipse-inst-linux64.tar.gz
 cd eclipse-installer 
 ./eclipse-inst
