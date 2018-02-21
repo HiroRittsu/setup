@@ -148,7 +148,7 @@ cd
 #RioneLauncherダウンロード
 if [ $rionelauncher = 'y' ]; then
 
-	wget -O RioneLauncher.sh https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher2.00.sh
+	wget -O RioneLauncher.sh https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher3.00.sh
 	mv RioneLauncher.sh $homedir/git/RioneLauncher.sh
 	
 fi
