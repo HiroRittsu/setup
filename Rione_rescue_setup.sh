@@ -18,6 +18,8 @@ echo "VisualStudioCodeをインストールしますか?(y/n)"
 read vscode
 echo "Atomをインストールしますか?(y/n)"
 read atom
+echo "SublimeText3をインストールしますか?(y/n)"
+read sublime
 echo "RioneLauncherをインストールしますか?(y/n)"
 read rionelauncher
 echo "RioneViewerをインストールしますか?(y/n)"
@@ -29,6 +31,7 @@ echo "GoogleChrome: "$goolgechorome
 echo "Slack: "$slack
 echo "VisualStudioCode: "$vscode
 echo "Atom: "$atom
+echo "SublimeText3: "$sublime
 echo "RioneLauncher: "$rionelauncher
 echo "RioneViewer: "$rioneviewer
 echo
@@ -102,7 +105,16 @@ if [ $atom = 'y' ]; then
 	sudo dpkg -i atom-amd64.deb
 	cd
 	
-fi	
+fi
+
+#sublime 
+if [ $sublime= 'y' ]; then
+
+	$homedir/ダウンロード/
+	wget https://download.sublimetext.com/sublime_text_3_build_3176_x64.tar.bz2
+	tar -xf sublime_text_3_build_3176_x64.tar.bz2 -C $homedir
+	
+fi
 
 #javaインストール
 sudo add-apt-repository ppa:webupd8team/java
