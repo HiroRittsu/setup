@@ -37,6 +37,13 @@ read ok
 
 if [ $ok = 'y' ]; then
 
+sudo killall -KILL apt.systemd.daily
+sudo mv /etc/apt/apt.conf.d/50appstream /etc/apt/apt.conf.d/50appstream.disable
+sudo apt update -y
+sudo apt upgrade -y
+sudo mv /etc/apt/apt.conf.d/50appstream.disable /etc/apt/apt.conf.d/50appstream
+sudo apt update -y
+
 #goolgechorome
 if [ $goolgechorome = 'y' ]; then
 	
@@ -48,7 +55,6 @@ if [ $goolgechorome = 'y' ]; then
 	echo "完了したら何か入力してください。"
 	read wait
 	cd $homedir/ダウンロード/
-	sudo apt update;
 	sudo apt-get install libnss3
 	sudo dpkg -i google-chrome-stable_current_amd64.deb
 	cd
@@ -165,7 +171,27 @@ if [ $rioneviewer = 'y' ]; then
 	
 fi
 
-LANG=C xdg-user-dirs-gtk-update
+cd .config
+
+sed -i s/'デスクトップ'/'Desktop'/g user-dirs.dirs
+sed -i s/'ダウンロード'/'Downloads'/g user-dirs.dirs
+sed -i s/'テンプレート'/'Temp'/g user-dirs.dirs
+sed -i s/'公開'/'Public'/g user-dirs.dirs
+sed -i s/'ドキュメント'/'Documents'/g user-dirs.dirs
+sed -i s/'ミュージック'/'Music'/g user-dirs.dirs
+sed -i s/'ピクチャ'/'Pictures'/g user-dirs.dirs
+sed -i s/'ビデオ'/'Videos'/g user-dirs.dirs
+
+cd ~/
+
+mv $HOME/デスクトップ $HOME/Desktop
+mv $HOME/ダウンロード $HOME/Downloads
+mv $HOME/テンプレート $HOME/Temp
+mv $HOME/公開 $HOME/Public
+mv $HOME/ドキュメント $HOME/Documents
+mv $HOME/ミュージック $HOME/Music
+mv $HOME/ピクチャ $HOME/Pictures
+mv $HOME/ビデオ $HOME/Videos
 
 fi
 
