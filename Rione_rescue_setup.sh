@@ -143,6 +143,25 @@ echo -javaagent:$homedir/eclipse/java-oxygen/eclipse/plugins/jp.sourceforge.merg
 sudo ln -s $homedir/eclipse/java-oxygen/eclipse/eclipse /usr/bin
 cd
 
+#Eclipse_Icon適応
+if [ `cat /etc/os-release | grep -c 16.04` -ne 0 ]; then
+
+	cd ~/.local/share/applications/
+	
+	rm eclipse.desktop &>/dev/null
+	touch eclipse.desktop
+	
+	echo "[Desktop Entry]" >> eclipse.desktop
+	echo "Type=Application" >> eclipse.desktop
+	echo "Name=Eclipse" >> eclipse.desktop
+	echo "GenericName=IDE" >> eclipse.desktop
+	echo "Icon=/home/$USER/eclipse/java-oxygen/eclipse/icon.xpm" >> eclipse.desktop
+	echo "Exec=/home/$USER/eclipse/java-oxygen/eclipse/eclipse" >> eclipse.desktop
+	echo "Terminal=false" >> eclipse.desktop
+	echo "Name[ja]=Eclipse" >> eclipse.desktop
+	
+fi
+
 #gitディレクトリ作成
 mkdir $homedir/git
 
