@@ -31,6 +31,8 @@ sudo apt-get install git
 #新サーバー
 cd $homedir/git
 git clone https://github.com/roborescue/rcrs-server.git
+sudo apt install ant
+cd rcrs-server
 ant clean-all
 ant complete-build
 cd
