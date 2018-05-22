@@ -1,3 +1,0 @@
-■■■■■SoccerLauncher-Update■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-SoccerLauncher-newVersion 1.00
-SoccerLauncher-link https://raw.githubusercontent.com/MiglyA/bash_soccer/master/SoccerLauncher1.00.sh
