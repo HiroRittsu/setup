@@ -36,6 +36,27 @@ read ok
 
 if [ $ok = 'y' ]; then
 
+	#ディレクトリ英語化
+	cd .config
+	sed -i s/'デスクトップ'/'Desktop'/g user-dirs.dirs
+	sed -i s/'ダウンロード'/'Downloads'/g user-dirs.dirs
+	sed -i s/'テンプレート'/'Temp'/g user-dirs.dirs
+	sed -i s/'公開'/'Public'/g user-dirs.dirs
+	sed -i s/'ドキュメント'/'Documents'/g user-dirs.dirs
+	sed -i s/'ミュージック'/'Music'/g user-dirs.dirs
+	sed -i s/'ピクチャ'/'Pictures'/g user-dirs.dirs
+	sed -i s/'ビデオ'/'Videos'/g user-dirs.dirs
+	cd ~/
+	mv $HOME/デスクトップ $HOME/Desktop
+	mv $HOME/ダウンロード $HOME/Downloads
+	mv $HOME/テンプレート $HOME/Temp
+	mv $HOME/公開 $HOME/Public
+	mv $HOME/ドキュメント $HOME/Documents
+	mv $HOME/ミュージック $HOME/Music
+	mv $HOME/ピクチャ $HOME/Pictures
+	mv $HOME/ビデオ $HOME/Videos
+
+	#初期エラー対処
 	sudo killall -KILL apt.systemd.daily
 	sudo mv /etc/apt/apt.conf.d/50appstream /etc/apt/apt.conf.d/50appstream.disable
 	sudo apt update -y
@@ -53,7 +74,7 @@ if [ $ok = 'y' ]; then
 		echo
 		#echo "完了したら何か入力してください。"
 		#read wait
-		cd $homedir/ダウンロード/
+		cd $homedir/Downloads/
 		wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 		sudo apt-get install libnss3
 		sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -65,8 +86,8 @@ if [ $ok = 'y' ]; then
 	if [ $slack = 'y' ]; then
 		
 		wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.9.0-amd64.deb
-		mv slack-desktop-2.9.0-amd64.deb $homedir/ダウンロード/
-		cd $homedir/ダウンロード/
+		mv slack-desktop-2.9.0-amd64.deb $homedir/Downloads/
+		cd $homedir/Downloads/
 		sudo dpkg -i slack-desktop-2.9.0-amd64.deb
 		cd
 		
@@ -82,7 +103,7 @@ if [ $ok = 'y' ]; then
 		echo
 		echo "完了したら何か入力してください。"
 		read wait
-		cd $homedir/ダウンロード/
+		cd $homedir/Downloads/
 		sudo dpkg -i code_1.18.1-1510857349_amd64.deb
 		cd
 		
@@ -98,7 +119,7 @@ if [ $ok = 'y' ]; then
 		echo
 		echo "完了したら何か入力してください。"
 		read wait
-		cd $homedir/ダウンロード/
+		cd $homedir/Downloads/
 		sudo dpkg -i atom-amd64.deb
 		cd
 		
@@ -107,7 +128,7 @@ if [ $ok = 'y' ]; then
 	#sublime 
 	if [ $sublime= 'y' ]; then
 
-		$homedir/ダウンロード/
+		$homedir/Downloads/
 		wget https://download.sublimetext.com/sublime_text_3_build_3176_x64.tar.bz2
 		tar -xf sublime_text_3_build_3176_x64.tar.bz2 -C $homedir
 		
@@ -116,7 +137,7 @@ if [ $ok = 'y' ]; then
 	if [ $eclipse= 'y' ]; then
 
 		#eclipceインストール
-		cd $homedir/ダウンロード/
+		cd $homedir/Downloads/
 		wget http://ftp.jaist.ac.jp/pub/eclipse/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz
 		tar -zxvf eclipse-inst-linux64.tar.gz
 		cd eclipse-installer 
@@ -125,8 +146,8 @@ if [ $ok = 'y' ]; then
 
 		#eclipse日本語化
 		wget http://ftp.jaist.ac.jp/pub/mergedoc/pleiades/build/stable/pleiades.zip
-		mv pleiades.zip $homedir/ダウンロード/
-		cd $homedir/ダウンロード/
+		mv pleiades.zip $homedir/Downloads/
+		cd $homedir/Downloads/
 		unzip pleiades.zip -d $homedir/eclipse/java-oxygen/eclipse/
 		echo -Xverify:none >> $homedir/eclipse/java-oxygen/eclipse/eclipse.ini
 		echo -javaagent:$homedir/eclipse/java-oxygen/eclipse/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar >> $homedir/eclipse/java-oxygen/eclipse/eclipse.ini
@@ -152,25 +173,7 @@ if [ $ok = 'y' ]; then
 		
 	fi
 
-	#ディレクトリ英語化
-	cd .config
-	sed -i s/'デスクトップ'/'Desktop'/g user-dirs.dirs
-	sed -i s/'ダウンロード'/'Downloads'/g user-dirs.dirs
-	sed -i s/'テンプレート'/'Temp'/g user-dirs.dirs
-	sed -i s/'公開'/'Public'/g user-dirs.dirs
-	sed -i s/'ドキュメント'/'Documents'/g user-dirs.dirs
-	sed -i s/'ミュージック'/'Music'/g user-dirs.dirs
-	sed -i s/'ピクチャ'/'Pictures'/g user-dirs.dirs
-	sed -i s/'ビデオ'/'Videos'/g user-dirs.dirs
-	cd ~/
-	mv $HOME/デスクトップ $HOME/Desktop
-	mv $HOME/ダウンロード $HOME/Downloads
-	mv $HOME/テンプレート $HOME/Temp
-	mv $HOME/公開 $HOME/Public
-	mv $HOME/ドキュメント $HOME/Documents
-	mv $HOME/ミュージック $HOME/Music
-	mv $HOME/ピクチャ $HOME/Pictures
-	mv $HOME/ビデオ $HOME/Videos
+	
 
 	echo
 	echo
