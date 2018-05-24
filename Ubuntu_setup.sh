@@ -47,13 +47,14 @@ if [ $ok = 'y' ]; then
 	if [ $goolgechorome = 'y' ]; then
 
 		echo
-		echo "ブラウザから.debをダウンロードしてください。場所は変更しなくても大丈夫です。"
+		#echo "ブラウザから.debをダウンロードしてください。場所は変更しなくても大丈夫です。"
 		echo
-		firefox https://www.google.com/chrome/browser/desktop/index.html?brand=CHBD&ds_kid=43700010867180244&gclid=EAIaIQobChMI792Bq5OG2AIVlgoqCh1K9AqbEAAYASAAEgLrVvD_BwE&gclsrc=aw.ds&dclid=CN7v8quThtgCFcM4lgodb3IPbA
+		#firefox https://www.google.com/chrome/browser/desktop/index.html?brand=CHBD&ds_kid=43700010867180244&gclid=EAIaIQobChMI792Bq5OG2AIVlgoqCh1K9AqbEAAYASAAEgLrVvD_BwE&gclsrc=aw.ds&dclid=CN7v8quThtgCFcM4lgodb3IPbA
 		echo
-		echo "完了したら何か入力してください。"
-		read wait
+		#echo "完了したら何か入力してください。"
+		#read wait
 		cd $homedir/ダウンロード/
+		wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 		sudo apt-get install libnss3
 		sudo dpkg -i google-chrome-stable_current_amd64.deb
 		cd
