@@ -28,7 +28,7 @@ if [ $ok = 'y' ];then
 	mkdir $homedir/git
 
 	#gitインストール
-	sudo apt-get install git
+	sudo apt install git
 
 	#新サーバー
 	cd $homedir/git
