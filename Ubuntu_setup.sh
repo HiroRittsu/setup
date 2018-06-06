@@ -126,15 +126,15 @@ if [ $ok = 'y' ]; then
 	fi
 
 	#sublime 
-	if [ $sublime= 'y' ]; then
+	if [ $sublime = 'y' ]; then
 
-		$homedir/Downloads/
+		cd $homedir/Downloads/
 		wget https://download.sublimetext.com/sublime_text_3_build_3176_x64.tar.bz2
 		tar -xf sublime_text_3_build_3176_x64.tar.bz2 -C $homedir
 		
 	fi
 
-	if [ $eclipse= 'y' ]; then
+	if [ $eclipse = 'y' ]; then
 
 		#eclipceインストール
 		cd $homedir/Downloads/
