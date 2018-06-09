@@ -74,7 +74,7 @@ if [ $ok = 'y' ]; then
 		echo
 		#echo "完了したら何か入力してください。"
 		#read wait
-		cd $homedir/Downloads/
+		cd ~/Downloads/
 		wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 		sudo apt-get install libnss3
 		sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -86,8 +86,8 @@ if [ $ok = 'y' ]; then
 	if [ $slack = 'y' ]; then
 		
 		wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.9.0-amd64.deb
-		mv slack-desktop-2.9.0-amd64.deb $homedir/Downloads/
-		cd $homedir/Downloads/
+		mv slack-desktop-2.9.0-amd64.deb ~/Downloads/
+		cd ~/Downloads/
 		sudo dpkg -i slack-desktop-2.9.0-amd64.deb
 		cd
 		
@@ -103,7 +103,7 @@ if [ $ok = 'y' ]; then
 		echo
 		echo "完了したら何か入力してください。"
 		read wait
-		cd $homedir/Downloads/
+		cd ~/Downloads/
 		sudo dpkg -i code_1.18.1-1510857349_amd64.deb
 		cd
 		
@@ -119,7 +119,7 @@ if [ $ok = 'y' ]; then
 		echo
 		echo "完了したら何か入力してください。"
 		read wait
-		cd $homedir/Downloads/
+		cd ~/Downloads/
 		sudo dpkg -i atom-amd64.deb
 		cd
 		
@@ -128,30 +128,32 @@ if [ $ok = 'y' ]; then
 	#sublime 
 	if [ $sublime = 'y' ]; then
 
-		cd $homedir/Downloads/
+		cd ~/Downloads/
 		wget https://download.sublimetext.com/sublime_text_3_build_3176_x64.tar.bz2
-		tar -xf sublime_text_3_build_3176_x64.tar.bz2 -C $homedir
+		tar -xf sublime_text_3_build_3176_x64.tar.bz2 -C ~/
 		
 	fi
 
 	if [ $eclipse = 'y' ]; then
 
 		#eclipceインストール
-		cd $homedir/Downloads/
+		cd ~/Downloads/
 		wget http://ftp.jaist.ac.jp/pub/eclipse/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz
 		tar -zxvf eclipse-inst-linux64.tar.gz
 		cd eclipse-installer 
 		./eclipse-inst
 		cd
+		
+		ECLIPSE=`find ~/ -name "eclipse.ini" | sed 's@/eclipse.ini@@g'`
 
 		#eclipse日本語化
 		wget http://ftp.jaist.ac.jp/pub/mergedoc/pleiades/build/stable/pleiades.zip
-		mv pleiades.zip $homedir/Downloads/
-		cd $homedir/Downloads/
-		unzip pleiades.zip -d $homedir/eclipse/java-oxygen/eclipse/
-		echo -Xverify:none >> $homedir/eclipse/java-oxygen/eclipse/eclipse.ini
-		echo -javaagent:$homedir/eclipse/java-oxygen/eclipse/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar >> $homedir/eclipse/java-oxygen/eclipse/eclipse.ini
-		sudo ln -s $homedir/eclipse/java-oxygen/eclipse/eclipse /usr/bin
+		mv pleiades.zip ~/Downloads/
+		cd ~/Downloads/
+		unzip pleiades.zip -d $ECLIPSE
+		echo -Xverify:none >> $ECLIPSE/eclipse.ini
+		echo -javaagent:$ECLIPSE/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar >> $ECLIPSE/eclipse.ini
+		sudo ln -s $ECLIPSE/eclipse /usr/bin
 		cd
 
 		#eclipse_Icon適応
@@ -164,8 +166,8 @@ if [ $ok = 'y' ]; then
 			echo "Type=Application" >> eclipse.desktop
 			echo "Name=Eclipse" >> eclipse.desktop
 			echo "GenericName=IDE" >> eclipse.desktop
-			echo "Icon=/home/$USER/eclipse/java-oxygen/eclipse/icon.xpm" >> eclipse.desktop
-			echo "Exec=/home/$USER/eclipse/java-oxygen/eclipse/eclipse" >> eclipse.desktop
+			echo "Icon=$ECLIPSE/icon.xpm" >> eclipse.desktop
+			echo "Exec=$ECLIPSE/eclipse" >> eclipse.desktop
 			echo "Terminal=false" >> eclipse.desktop
 			echo "Name[ja]=Eclipse" >> eclipse.desktop
 			
