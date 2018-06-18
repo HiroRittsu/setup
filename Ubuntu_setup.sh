@@ -135,6 +135,11 @@ if [ $ok = 'y' ]; then
 	fi
 
 	if [ $eclipse = 'y' ]; then
+		#java
+		sudo add-apt-repository ppa:webupd8team/java
+		sudo apt-get update
+		sudo apt-get -f install
+		sudo apt-get install oracle-java8-installer
 
 		#eclipceインストール
 		cd ~/Downloads/
