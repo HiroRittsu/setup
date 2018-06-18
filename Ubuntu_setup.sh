@@ -104,7 +104,7 @@ if [ $ok = 'y' ]; then
 		echo "完了したら何か入力してください。"
 		read wait
 		cd ~/Downloads/
-		sudo dpkg -i code_1.18.1-1510857349_amd64.deb
+		sudo dpkg -i code_1.24.1-1528912196_amd64.deb
 		cd
 		
 	fi
