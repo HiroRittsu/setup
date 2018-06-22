@@ -31,7 +31,13 @@ if [ $ok = 'y' ];then
 	sudo apt install git
 	
 	#旧サーバー
-	wget -O install-roborescue.sh https://raw.githubusercontent.com/tkmnet/rcrs-scripts/master/install-roborescue.sh 
+	wget -O install-roborescue.sh https://raw.githubusercontent.com/tkmnet/rcrs-scripts/master/install-roborescue.sh
+	
+	sed -i -e '32,34d' install-roborescue.sh 
+	sed -i -e "32i $WGET https://sourceforge.net/projects/roborescue/files/roborescue/v1.2/roborescue-v1.2.tgz" install-roborescue.sh
+	sed -i -e "33i tar zxvf ./roborescue-v1.2.tgz" install-roborescue.sh
+	sed -i -e "34i rm ./roborescue-v1.2.tgz" install-roborescue.sh
+	
 	bash install-roborescue.sh
 	cd roborescue-v1.2
 	ant
