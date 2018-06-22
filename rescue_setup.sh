@@ -36,8 +36,12 @@ if [ $ok = 'y' ];then
 	sed -i -e "34i rm ./roborescue-v1.2.tgz" install-roborescue.sh
 	
 	bash install-roborescue.sh
+	rm install-roborescue.sh
+	rm -rf apache-ant*
 	cd roborescue-v1.2
 	ant
+	
+	
 
 	#新サーバー
 	cd ~/git
