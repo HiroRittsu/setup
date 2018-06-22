@@ -1,9 +1,6 @@
 #!/bin/bash
 #作製　みぐりー
 
-#ホームディレクトリ
-homedir="/home/$USER"
-
 echo "RioneLauncherをインストールしますか?(y/n)"
 read rionelauncher
 echo "ねねっちをインストールしますか?(y/n)"
@@ -25,7 +22,7 @@ if [ $ok = 'y' ];then
 	sudo apt-get install oracle-java8-installer
 
 	#gitディレクトリ作成
-	mkdir $homedir/git
+	mkdir ~/git
 
 	#gitインストール
 	sudo apt install git
@@ -43,7 +40,7 @@ if [ $ok = 'y' ];then
 	ant
 
 	#新サーバー
-	cd $homedir/git
+	cd ~/git
 	git clone https://github.com/roborescue/rcrs-server.git
 	sudo apt install ant
 	cd rcrs-server
@@ -52,7 +49,7 @@ if [ $ok = 'y' ];then
 	cd
 
 	#新ソースコード
-	cd $homedir/git
+	cd ~/git
 	git clone https://github.com/roborescue/rcrs-adf-sample.git
 	cd
 
@@ -60,7 +57,7 @@ if [ $ok = 'y' ];then
 	if [ $rionelauncher = 'y' ]; then
 
 		wget -O RioneLauncher.sh https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher3.00.sh
-		mv RioneLauncher.sh $homedir/git/RioneLauncher.sh
+		mv RioneLauncher.sh ~/git/RioneLauncher.sh
 
 	fi
 
