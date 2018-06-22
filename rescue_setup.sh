@@ -23,28 +23,24 @@ if [ $ok = 'y' ];then
 
 	#gitディレクトリ作成
 	mkdir ~/git
+	cd ~/git
 
 	#gitインストール
 	sudo apt install git
 	
 	#旧サーバー
 	wget -O install-roborescue.sh https://raw.githubusercontent.com/tkmnet/rcrs-scripts/master/install-roborescue.sh
-	
 	sed -i -e '32,34d' install-roborescue.sh 
 	sed -i -e "32i \$WGET https://sourceforge.net/projects/roborescue/files/roborescue/v1.2/roborescue-v1.2.tgz" install-roborescue.sh
 	sed -i -e "33i tar zxvf ./roborescue-v1.2.tgz" install-roborescue.sh
 	sed -i -e "34i rm ./roborescue-v1.2.tgz" install-roborescue.sh
-	
 	bash install-roborescue.sh
 	rm install-roborescue.sh
 	rm -rf apache-ant*
 	cd roborescue-v1.2
 	ant
 	
-	
-
 	#新サーバー
-	cd ~/git
 	git clone https://github.com/roborescue/rcrs-server.git
 	sudo apt install ant
 	cd rcrs-server
