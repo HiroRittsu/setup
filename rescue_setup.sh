@@ -23,12 +23,12 @@ if [ $ok = 'y' ];then
 
 	#gitディレクトリ作成
 	mkdir ~/git
-	cd ~/git
 
 	#gitインストール
 	sudo apt install git
 	
 	#旧サーバー
+	cd ~/git
 	wget -O install-roborescue.sh https://raw.githubusercontent.com/tkmnet/rcrs-scripts/master/install-roborescue.sh
 	sed -i -e '32,34d' install-roborescue.sh 
 	sed -i -e "32i \$WGET https://sourceforge.net/projects/roborescue/files/roborescue/v1.2/roborescue-v1.2.tgz" install-roborescue.sh
@@ -41,6 +41,7 @@ if [ $ok = 'y' ];then
 	ant
 	
 	#新サーバー
+	cd ~/git
 	git clone https://github.com/roborescue/rcrs-server.git
 	sudo apt install ant
 	cd rcrs-server
@@ -56,7 +57,7 @@ if [ $ok = 'y' ];then
 	#RioneLauncherダウンロード
 	if [ $rionelauncher = 'y' ]; then
 
-		wget -O RioneLauncher.sh https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher3.00.sh
+		wget -O RioneLauncher.sh https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher4.00.sh
 		mv RioneLauncher.sh ~/git/RioneLauncher.sh
 
 	fi
