@@ -29,6 +29,12 @@ if [ $ok = 'y' ];then
 
 	#gitインストール
 	sudo apt install git
+	
+	#旧サーバー
+	wget -O install-roborescue.sh https://raw.githubusercontent.com/tkmnet/rcrs-scripts/master/install-roborescue.sh 
+	bash install-roborescue.sh
+	cd roborescue-v1.2
+	ant
 
 	#新サーバー
 	cd $homedir/git
@@ -39,7 +45,7 @@ if [ $ok = 'y' ];then
 	ant complete-build
 	cd
 
-	#ソースコード
+	#新ソースコード
 	cd $homedir/git
 	git clone https://github.com/roborescue/rcrs-adf-sample.git
 	cd
