@@ -27,6 +27,9 @@ if [ $ok = 'y' ];then
 	#gitインストール
 	sudo apt install git
 	
+	#antインストール
+	sudo apt install ant
+	
 	#旧サーバー
 	cd ~/git
 	wget -O install-roborescue.sh https://raw.githubusercontent.com/tkmnet/rcrs-scripts/master/install-roborescue.sh
@@ -43,7 +46,6 @@ if [ $ok = 'y' ];then
 	#新サーバー
 	cd ~/git
 	git clone https://github.com/roborescue/rcrs-server.git
-	sudo apt install ant
 	cd rcrs-server
 	ant clean-all
 	ant complete-build
@@ -57,7 +59,7 @@ if [ $ok = 'y' ];then
 	#RioneLauncherダウンロード
 	if [ $rionelauncher = 'y' ]; then
 
-		wget -O RioneLauncher.sh https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher4.00.sh
+		wget -O RioneLauncher.sh https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher.sh
 		mv RioneLauncher.sh ~/git/RioneLauncher.sh
 
 	fi
