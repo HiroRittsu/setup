@@ -89,6 +89,7 @@ if [ $ok = 'y' ]; then
 		wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.9.0-amd64.deb
 		mv slack-desktop-2.9.0-amd64.deb ~/Downloads/
 		cd ~/Downloads/
+		sudo apt-get install libappindicator1
 		sudo dpkg -i slack-desktop-2.9.0-amd64.deb
 		cd
 		
@@ -105,7 +106,7 @@ if [ $ok = 'y' ]; then
 		echo "完了したら何か入力してください。"
 		read wait
 		cd ~/Downloads/
-		sudo dpkg -i sudo dpkg -i `ls | grep "code"`
+		sudo dpkg -i `ls | grep "code"`
 		cd
 		
 	fi
