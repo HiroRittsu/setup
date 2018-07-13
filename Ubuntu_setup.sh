@@ -64,6 +64,7 @@ if [ $ok = 'y' ]; then
 	sudo mv /etc/apt/apt.conf.d/50appstream.disable /etc/apt/apt.conf.d/50appstream
 	sudo apt update -y
 	sudo timedatectl set-local-rtc true
+	sudo apt-get -f intsall
 
 	#goolgechorome
 	if [ $goolgechorome = 'y' ]; then
