@@ -3,12 +3,9 @@
 
 echo "RioneLauncherをインストールしますか?(y/n)"
 read rionelauncher
-echo "ねねっちをインストールしますか?(y/n)"
-read rioneviewer
 
 clear
 echo "RioneLauncher: "$rionelauncher
-echo "RioneViewer: "$rioneviewer
 echo
 echo "これで大丈夫ですか？(y/n)"
 read ok
@@ -61,21 +58,6 @@ if [ $ok = 'y' ];then
 
 		wget -O RioneLauncher.sh https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher.sh
 		mv RioneLauncher.sh ~/git/RioneLauncher.sh
-
-	fi
-
-	#ねねっちビューアーインストール
-	if [ $rioneviewer = 'y' ]; then
-
-		echo
-		echo "GoogleDriveのInsdtaller.zipをダウンロードしてください。場所は変更しなくても大丈夫です。"
-		echo
-		firefox https://drive.google.com/drive/folders/0B1BfWs2E1JvbbFpvWGtjTGxDeVU
-		echo
-		echo "完了したら何か入力してください。"
-		read wait
-		unzip Installer.zip
-		bash Installer.sh
 
 	fi
 
