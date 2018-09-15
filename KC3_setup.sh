@@ -3,7 +3,7 @@
 
 #ホームディレクトリ
 HOMEDIR="/home/$USER"
-RESCUEDIR="/home/$USER/git"
+RESCUEDIR="/home/$USER/KC3rescue"
 
 echo
 echo "KC3用環境構築スクリプト"
@@ -51,7 +51,7 @@ if [[ $ok = 'y' ]]; then
 
 		#eclipse日本語化
 		wget http://ftp.jaist.ac.jp/pub/mergedoc/pleiades/build/stable/pleiades.zip
-		mv pleiades.zip ~/KC3Downloads/
+		mv pleiades.zip $HOMEDIR/KC3Downloads/
 		cd $HOMEDIR/KC3Downloads/
 		unzip pleiades.zip -d $ECLIPSE
 		echo -Xverify:none >> $ECLIPSE/eclipse.ini
@@ -80,7 +80,6 @@ if [[ $ok = 'y' ]]; then
 		
 	fi
 
-
 	echo 'レスキュー環境を構築します'
 	mkdir $RESCUEDIR
 
@@ -90,20 +89,6 @@ if [[ $ok = 'y' ]]; then
 	#gitインストール
 	sudo apt install git
 
-	#旧サーバー
-	cd $HOMEDIR/git
-	wget -O install-roborescue.sh https://raw.githubusercontent.com/tkmnet/rcrs-scripts/master/install-roborescue.sh
-	sed -i -e '32,34d' install-roborescue.sh 
-	sed -i -e "32i \$WGET https://sourceforge.net/projects/roborescue/files/roborescue/v1.2/roborescue-v1.2.tgz" install-roborescue.sh
-	sed -i -e "33i tar zxvf ./roborescue-v1.2.tgz" install-roborescue.sh
-	sed -i -e "34i rm ./roborescue-v1.2.tgz" install-roborescue.sh
-	bash install-roborescue.sh
-	rm install-roborescue.sh
-	rm -rf apache-ant*
-	cd roborescue-v1.2
-	ant
-	cd $HOMEDIR
-
 	#サーバー
 	cd $RESCUEDIR
 	git clone https://github.com/roborescue/rcrs-server.git
@@ -112,17 +97,9 @@ if [[ $ok = 'y' ]]; then
 	ant complete-build
 	cd $HOMEDIR
 
-	#サーバー
-	cd $RESCUEDIR
-	git clone https://github.com/MiglyA/KC3_RescueServer.git
-	cd ./KC3_RescueServer
-	ant clean-all
-	ant complete-build
-	cd $HOMEDIR
-
 	#新ソースコード
 	cd $RESCUEDIR
-	git clone https://github.com/roborescue/rcrs-adf-sample.git
+	git clone https://github.com/Ri--one/KC3agent.git
 
 	#RioneLauncherダウンロード
 	wget -O RioneLauncher.sh https://raw.githubusercontent.com/Ri--one/bash-rescue/master/RioneLauncher.sh
