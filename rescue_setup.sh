@@ -44,8 +44,10 @@ if [ $ok = 'y' ];then
 	cd ~/git
 	git clone https://github.com/roborescue/rcrs-server.git
 	cd rcrs-server
-	ant clean-all
-	ant complete-build
+	sed -i 's@implementation@compile@g' build.gradle
+	sed -i 's@testImplementation@compile@g' build.gradle
+	gradle clean
+	gradle completeBuild
 	cd
 
 	#新ソースコード
