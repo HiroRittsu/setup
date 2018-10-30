@@ -24,9 +24,9 @@ echo "SublimeText3をインストールしますか?(y/n)"
 read sublime
 echo "Eclipseをインストールしますか?(y/n)"
 read eclipse
-ehco "Pycharmをインストールしますか？(y/n)"
+echo "Pycharmをインストールしますか？(y/n)"
 read pycharm
-ehco "IntelliJをインストールしますか？(y/n)"
+echo "IntelliJをインストールしますか？(y/n)"
 read intellij
 
 clear
@@ -34,7 +34,7 @@ echo
 echo "GoogleChrome: "$goolgechorome
 echo "Slack: "$slack
 echo "VisualStudioCode: "$vscode
-echo "Vim: "%vim
+echo "Vim: "$vim
 echo "Emacs: "$emacs
 echo "Atom: "$atom
 echo "SublimeText3: "$sublime
