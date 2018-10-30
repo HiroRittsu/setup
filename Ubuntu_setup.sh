@@ -14,21 +14,33 @@ echo "Slackをインストールしますか?(y/n)"
 read slack
 echo "VisualStudioCodeをインストールしますか?(y/n)"
 read vscode
+echo "Vimをインストールしますか？(y/n)"
+read vim
+echo "Emacsをインストールしますか？(y/n)"
+read emacs
 echo "Atomをインストールしますか?(y/n)"
 read atom
 echo "SublimeText3をインストールしますか?(y/n)"
 read sublime
 echo "Eclipseをインストールしますか?(y/n)"
 read eclipse
+ehco "Pycharmをインストールしますか？(y/n)"
+read pycharm
+ehco "IntelliJをインストールしますか？(y/n)"
+read intellij
 
 clear
 echo
 echo "GoogleChrome: "$goolgechorome
 echo "Slack: "$slack
 echo "VisualStudioCode: "$vscode
+echo "Vim: "%vim
+echo "Emacs: "$emacs
 echo "Atom: "$atom
 echo "SublimeText3: "$sublime
 echo "Eclipse: "$eclipse
+echo "Pycharm: "$pycharm
+echo "IntelliJ: "$intellij
 
 echo
 echo "これで大丈夫ですか？(y/n)"
@@ -100,19 +112,28 @@ if [ $ok = 'y' ]; then
 
 	#VScode
 	if [ $vscode = 'y' ]; then
-		
-		echo
-		echo "ブラウザから.debをダウンロードしてください。場所は変更しなくても大丈夫です。"
-		echo
-		firefox https://code.visualstudio.com/
-		echo
-		echo "完了したら何か入力してください。"
-		read wait
+
 		cd ~/Downloads/
-		sudo dpkg -i `ls | grep "code"`
+		wget https://go.microsoft.com/fwlink/?LinkID=760868
+		sudo dpkg -i `ls | grep "LinkID"`
 		cd
 		
 	fi
+	
+	#vim
+	if [ $vim = 'y' ]; then
+
+		sudo apt install vim
+		
+	fi 
+	
+	#emacs
+	if [ $emacs = 'y' ]; then
+
+		sudo apt install emacs
+		
+	fi 
+	
 
 	#atom
 	if [ $atom = 'y' ]; then
@@ -141,6 +162,7 @@ if [ $ok = 'y' ]; then
 		
 	fi
 
+	#eclipse
 	if [ $eclipse = 'y' ]; then
 		#java
 		sudo add-apt-repository ppa:webupd8team/java
@@ -186,6 +208,29 @@ if [ $ok = 'y' ]; then
 		fi
 		
 	fi
+	
+	#pycharm 
+	if [ $pycharm = 'y' ]; then
+
+		cd ~/Downloads/ 
+		wget https://download.jetbrains.com/python/pycharm-community-2018.2.4.tar.gz
+		tar -zxvf pycharm-community-2018.2.4.tar.gz
+		mv pycharm-community-2018.2.4 ~/pycharm
+		
+	fi
+	
+	#intellij 
+	if [ $intellij = 'y' ]; then
+
+		cd ~/Downloads/ 
+		wget https://download.jetbrains.com/idea/ideaIC-2018.2.5.tar.gz
+		tar -zxvf ideaIC-2018.2.5.tar.gz
+		mv ideaIC-2018.2.5.tar.gz ~/intellij
+		
+	fi
+	
+	
+	
 
 	
 
