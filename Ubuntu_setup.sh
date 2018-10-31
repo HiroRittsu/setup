@@ -217,6 +217,15 @@ if [ $ok = 'y' ]; then
 		tar -zxvf pycharm-community-2018.2.4.tar.gz
 		mv pycharm-community-2018.2.4 ~/pycharm
 		
+		PYCHARM=`find ~/ -type d -name ".*" -prune -o -type f -print | grep "pycharm.sh" | sed 's@/bin/pycharm.sh@@g'`
+
+		wget http://ftp.jaist.ac.jp/pub/mergedoc/pleiades/build/stable/pleiades.zip
+		unzip pleiades.zip -d $PYCHARM
+		echo -Xverify:none >> $PYCHARM/bin/pycharm64.vmoptions
+		echo -javaagent:$PYCHARM/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar >> $PYCHARM/bin/pycharm64.vmoptions
+		echo -Xverify:none >> $PYCHARM/bin/pycharm.vmoptions
+		echo -javaagent:$PYCHARM/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar >> $PYCHARM/bin/pycharm.vmoptions
+		
 	fi
 	
 	#intellij 
@@ -226,6 +235,15 @@ if [ $ok = 'y' ]; then
 		wget https://download.jetbrains.com/idea/ideaIC-2018.2.5.tar.gz
 		tar -zxvf ideaIC-2018.2.5.tar.gz
 		mv ideaIC-2018.2.5.tar.gz ~/intellij
+		
+		INTELLIJ=`find ~/ -type d -name ".*" -prune -o -type f -print | grep "idea.sh" | sed 's@/bin/idea.sh@@g'`
+
+		wget http://ftp.jaist.ac.jp/pub/mergedoc/pleiades/build/stable/pleiades.zip
+		unzip pleiades.zip -d $INTELLIJ
+		echo -Xverify:none >> $INTELLIJ/bin/idea64.vmoptions
+		echo -javaagent:$INTELLIJ/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar >> $INTELLIJ/bin/idea64.vmoptions
+		echo -Xverify:none >> $INTELLIJ/bin/idea.vmoptions
+		echo -javaagent:$INTELLIJ/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar >> $INTELLIJ/bin/idea.vmoptions
 		
 	fi
 	
