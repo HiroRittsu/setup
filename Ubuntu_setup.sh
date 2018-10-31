@@ -130,7 +130,7 @@ if [ $ok = 'y' ]; then
 	#emacs
 	if [ $emacs = 'y' ]; then
 
-		sudo apt install emacs
+		sudo apt install emacs ibus-mozc emacs-mozc
 		
 	fi 
 	
