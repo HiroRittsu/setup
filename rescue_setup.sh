@@ -41,6 +41,7 @@ if [ $ok = 'y' ];then
 	ant
 	
 	#新サーバー
+	sudo apt install gradle
 	cd ~/git
 	git clone https://github.com/roborescue/rcrs-server.git
 	cd rcrs-server
@@ -58,7 +59,7 @@ if [ $ok = 'y' ];then
 	#RioneLauncherダウンロード
 	if [ $rionelauncher = 'y' ]; then
 
-		wget -O RioneLauncher.sh https://raw.githubusercontent.com/MiglyA/bash-rescue/master/RioneLauncher.sh
+		wget -O RioneLauncher.sh https://raw.githubusercontent.com/Ri--one/bash-rescue/master/RioneLauncher.sh
 		mv RioneLauncher.sh ~/git/RioneLauncher.sh
 
 	fi
