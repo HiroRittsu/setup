@@ -214,8 +214,8 @@ if [ $ok = 'y' ]; then
 
 		cd ~/Downloads/ 
 		wget https://download.jetbrains.com/python/pycharm-community-2018.3.2.tar.gz
-		tar -zxvf pycharm-community-2018.2.4.tar.gz
-		mv pycharm-community-2018.2.4 ~/pycharm
+		tar -zxvf pycharm-community-2018.3.2.tar.gz
+		mv pycharm-community-2018.3.2 ~/pycharm
 		
 		PYCHARM=`find ~/ -type d -name ".*" -prune -o -type f -print | grep "pycharm.sh" | sed 's@/bin/pycharm.sh@@g'`
 
