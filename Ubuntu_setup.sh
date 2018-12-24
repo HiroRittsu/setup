@@ -213,7 +213,7 @@ if [ $ok = 'y' ]; then
 	if [ $pycharm = 'y' ]; then
 
 		cd ~/Downloads/ 
-		wget https://download.jetbrains.com/python/pycharm-community-2018.2.4.tar.gz
+		wget https://download.jetbrains.com/python/pycharm-community-2018.3.2.tar.gz
 		tar -zxvf pycharm-community-2018.2.4.tar.gz
 		mv pycharm-community-2018.2.4 ~/pycharm
 		
