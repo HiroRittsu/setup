@@ -232,9 +232,9 @@ if [ $ok = 'y' ]; then
 	if [ $intellij = 'y' ]; then
 
 		cd ~/Downloads/ 
-		wget https://download.jetbrains.com/idea/ideaIC-2018.2.5.tar.gz
-		tar -zxvf ideaIC-2018.2.5.tar.gz
-		mv ideaIC-2018.2.5.tar.gz ~/intellij
+		wget https://download.jetbrains.com/idea/ideaIC-2018.3.5.tar.gz
+		tar -zxvf ideaIC-2018.3.5.tar.gz
+		mv ideaIC-2018.3.5.tar.gz ~/intellij
 		
 		INTELLIJ=`find ~/ -type d -name ".*" -prune -o -type f -print | grep "idea.sh" | sed 's@/bin/idea.sh@@g'`
 
