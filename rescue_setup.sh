@@ -55,6 +55,10 @@ if [ $ok = 'y' ];then
 	cd ~/git
 	git clone https://github.com/roborescue/rcrs-adf-sample.git
 	cd
+	
+	cd ~/git
+	git clone https://migly@bitbucket.org/rione/rionerescue.git
+	cd
 
 	#RioneLauncherダウンロード
 	if [ $rionelauncher = 'y' ]; then
