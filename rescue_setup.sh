@@ -13,10 +13,9 @@ read ok
 if [ $ok = 'y' ];then
 	
 	#javaインストール
-	sudo add-apt-repository ppa:webupd8team/java
 	sudo apt-get update
 	sudo apt-get -f install
-	sudo apt-get install oracle-java8-installer
+	sudo apt install openjdk-8-jdk
 
 	#gitディレクトリ作成
 	mkdir ~/git
