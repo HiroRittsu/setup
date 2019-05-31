@@ -56,7 +56,7 @@ if [ $ok = 'y' ];then
 	cd
 	
 	cd ~/git
-	git clone https://migly@bitbucket.org/rione/rionerescue.git
+	git clone https://bitbucket.org/rione/rionerescue.git
 	cd
 
 	#RioneLauncherダウンロード
