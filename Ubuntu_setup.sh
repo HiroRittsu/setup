@@ -172,7 +172,7 @@ if [ $ok = 'y' ]; then
 
 		#eclipceインストール
 		cd ~/Downloads/
-		wget http://ftp.jaist.ac.jp/pub/eclipse/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz
+		wget http://ftp.jaist.ac.jp/pub/eclipse/oomph/epp/2019-03/R/eclipse-inst-linux64.tar.gz
 		tar -zxvf eclipse-inst-linux64.tar.gz
 		cd eclipse-installer 
 		./eclipse-inst
