@@ -101,13 +101,12 @@ if [ $ok = 'y' ]; then
 	#スラック
 	if [ $slack = 'y' ]; then
 		
-		wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.9.0-amd64.deb
-		mv slack-desktop-2.9.0-amd64.deb ~/Downloads/
+		wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.0.2-amd64.deb
+		mv slack-desktop-4.0.2-amd64.deb ~/Downloads/
 		cd ~/Downloads/
 		sudo apt-get install libappindicator1
-		sudo dpkg -i slack-desktop-2.9.0-amd64.deb
+		sudo dpkg -i slack-desktop-4.0.2-amd64.deb
 		cd
-		
 	fi
 
 	#VScode
